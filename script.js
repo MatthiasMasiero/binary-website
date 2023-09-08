@@ -35,6 +35,9 @@ function updateBackground() {
     const binaryValues = rows.map(row => row.map(button => button.dataset.state).join(''));
     const [r, g, b] = binaryValues.map(binary => parseInt(binary, 2));
     document.body.style.background = `rgb(${r}, ${g}, ${b})`;
+
+    const rgbDisplay = document.getElementById('rgbDisplay');
+    rgbDisplay.textContent = `RGB: ${r}, ${g}, ${b}`;
 }
 
 init();
